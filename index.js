@@ -19,10 +19,21 @@ app.get('/dashboard/:username', (req, res) => {
   res.send(`hello ${username}`);
 });
        
-app.post('/username', (req, res) =>{
+app.post('/username', async (req, res) =>{
   const {username} = req.body;
   if (username) {
-    res.redirect(`/dashboard/${username}`);
+    try{
+      const response = await fetch (`${URL}&method=user.getInfo&user=${username}&format=json`);
+      const data = await response.json();
+      console.log(data);
+      if (data.user){
+        res.redirect(`/dashboard/${username}`);
+      } else {
+        console.log("didnt work");
+      }
+    } catch (err){
+      console.error("caught error");
+    }
   } else {
     res.send ("send username: can't leave it blank");
   }
