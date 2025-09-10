@@ -14,9 +14,22 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/dashboard/:username', (req, res) => {
+app.get('/dashboard/:username', async (req, res) => {
   const username = req.params.username;
-  res.send(`hello ${username}`);
+  console.log("Route hit for:", username, new Date().toISOString());
+  try {
+    const response = await fetch(`${URL}&method=user.getInfo&user=${username}&format=json`);
+    const data = await response.json();
+    console.log(data);
+    if (data.user) {
+      res.render('dashboard', { user: data.user });
+    } else {
+      res.status(404).send("User Not Found");
+    }
+  } catch (err) {
+    console.error("Internal Error:", err.message);
+    res.status(500).send("Internal Server Error");
+  }
 });
        
 app.post('/username', async (req, res) =>{
@@ -25,17 +38,16 @@ app.post('/username', async (req, res) =>{
     try{
       const response = await fetch (`${URL}&method=user.getInfo&user=${username}&format=json`);
       const data = await response.json();
-      console.log(data);
       if (data.user){
         res.redirect(`/dashboard/${username}`);
       } else {
-        console.log("didnt work");
+        res.send("User Not Found");
       }
     } catch (err){
-      console.error("caught error");
+      console.error("Internal Error");
     }
   } else {
-    res.send ("send username: can't leave it blank");
+    res.send ("Username Cannot Be Blank");
   }
 });
 

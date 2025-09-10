@@ -1,0 +1,13 @@
+html, body{
+  margin:0px;
+  padding:0px;
+  height:100%;
+  color:white;
+}
+
+body{
+  background-image: url("music.jpg");
+  background-position: center-top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
