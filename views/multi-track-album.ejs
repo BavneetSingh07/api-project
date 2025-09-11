@@ -18,7 +18,11 @@
         </tr>
         <% tracklist.forEach(track => { %>
           <tr>
-            <td><%=track.name%></td>
+            <td>
+              <a href = "/track/<%=track.name%>/<%=(track.artist.name.split(',')[0].trim()).split("&")[0].trim()%>">
+                <%=track.name%>
+              </a>
+            </td>
             <% if (track.duration){ %>
             <td><%=track.duration%></td>
             <%} else {%>
@@ -43,7 +47,9 @@
            Artist
          </td>
          <td>
-           <%=album.artist%>
+          <a href = "/artist/<%=album.artist%>">
+            <%=album.artist%>
+          </a>
          </td>
         </tr>
         <tr>

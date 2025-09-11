@@ -17,7 +17,11 @@
           <th>Duration</th>
         </tr>
         <tr>
-          <td><%=album.name%></td>
+          <td>
+            <a href = "/track/<%=album.name%>/<%=album.artist%>">
+              <%=album.name%>
+            </a>
+          </td>
           <% if (album.duration){ %>
             <td><%=album.duration%></td>
             <%} else {%>
@@ -38,10 +42,12 @@
         </tr>
         <tr>
           <td>
-           Artist
+            Artist
          </td>
          <td>
-           <%=album.artist%>
+          <a href = "/artist/<%=album.artist%>">
+            <%=album.artist%>
+          </a>
          </td>
         </tr>
         <tr>

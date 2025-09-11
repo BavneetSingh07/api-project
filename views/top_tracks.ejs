@@ -21,7 +21,7 @@
       <%tracklist.forEach(track =>{ %>
         <tr>
           <td>
-            <a href = "/track/<%=track.name%>/<%=track.artist.name%>">
+            <a href = "/track/<%=track.name%>/<%=track.artist.name.split(",")[0]%>">
               <%=track.name%>
             </a>
           </td>

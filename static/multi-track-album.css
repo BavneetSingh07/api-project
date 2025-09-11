@@ -69,3 +69,22 @@ body{
 #track-table tr td, #track-table tr th{
   border-radius: 15px;
 }
+
+#track-table tr td a:link{
+  text-decoration: none;
+  color: white;
+}
+#track-table tr td a:visited{
+  text-decoration: none;
+  color: white;
+}
+
+#table-box table tr td a:link{
+  text-decoration: none;
+  color: white;
+}
+
+#table-box table tr td a:visited{
+  text-decoration: none;
+  color: white;
+}

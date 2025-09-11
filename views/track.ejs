@@ -19,12 +19,20 @@
       </tr>
       <tr>
         <td>Artist</td>
-        <td><%=track.artist.name%></td>
+        <td>
+          <a href = "/artist/<%=track.artist.name%>">
+          <%=track.artist.name%>
+          </a>
+        </td>
       </tr>
       <% if (track.album &&track.album.title){ %>
         <tr>
           <td>Album</td>
-          <td><%=track.album.title%></td>
+          <td>
+            <a href = "album/<%=track.album.title%>/<%=track.artist.name%>">
+              <%=track.album.title%>
+            </a>
+          </td>
         </tr>
       <% } %>
       <tr>

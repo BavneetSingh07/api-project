@@ -107,7 +107,7 @@ app.get('/album/:album/:artist', async (req,res) => {
   try{
     const response = await fetch(`${URL}&method=album.getinfo&album=${album}&artist=${artist}&format=json`);
     const data = await response.json();
-    console.log(data.album);
+    console.log("ALBUM-INFO", data.album);
     if (data.album && data.album.tracks && data.album.tracks.track) {
       if (Array.isArray(data.album.tracks.track)){
         res.render('multi-track-album',{
@@ -188,7 +188,7 @@ app.get('/track/:track/:artist', async (req,res) => {
   try{
     const response = await fetch(`${URL}&method=track.getinfo&track=${track}&artist=${artist}&format=json`);
     const data = await response.json();
-    console.log(data);
+    console.log("TRACK-INFO", data);
     res.render('track', {
       track: data.track
     })
