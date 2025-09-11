@@ -12,28 +12,67 @@
     MY DASHBOARD
   </div>
   <div id="user-info-container">
-    <table>
-      <tr>
-        <td>Artist</td>
-        <td><%=user.name%></td>
-      </tr>
-      <tr>
-        <td>Playcount</td>
-        <td><%=user.playcount%></td>
-      </tr>
-      <tr>
-        <td>Artist Count</td>
-        <td><%=user.artist_count%></td>
-      </tr>
-      <tr>
-        <td>Track Count</td>
-        <td><%=user.track_count%></td>
-      </tr>
-      <tr>
-        <td>Album Count</td>
-        <td><%=user.album_count%></td>
-      </tr>
-    </table>
+    <div id="left"> 
+      <div id = "options-container">
+        <table id = "options-table">
+          <tr>
+            <td>
+              <a href = "/<%=user.name%>/friends" id = "link">
+                Friends
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href = "/<%=user.name%>/top_albums" id = "link">
+                Top Albums
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href = "/<%=user.name%>/top_tracks" id = "link">
+                Top Tracks
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href = "/<%=user.name%>/top_artist" id = "link">
+               Top Artist
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="middle">
+      <div id = middle-box>
+        <table id = "dashboard-table">
+          <tr>
+            <td>Username</td>
+            <td><%=user.name%></td>
+          </tr>
+          <tr>
+            <td>Playcount</td>
+            <td><%=user.playcount%></td>
+          </tr>
+          <tr>
+            <td>Artist Count</td>
+            <td><%=user.artist_count%></td>
+          </tr>
+          <tr>
+            <td>Track Count</td>
+            <td><%=user.track_count%></td>
+          </tr>
+          <tr>
+            <td>Album Count</td>
+            <td><%=user.album_count%></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id = "right"> </div>
   </div>
 </body>
 </html>

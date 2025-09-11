@@ -31,6 +31,27 @@ app.get('/dashboard/:username', async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
+app.get('/:username/friends', async (req,res) => {
+  const username = req.params.username;
+  try{
+    const response = await fetch(`${URL}&method=user.getfriends&user=${username}&format=json&limit=20`);
+    const data = await response.json();
+    console.log(data.friends.user);
+    if (data.friends){
+      res.render('friends', {
+        totalpages: data.friends['@attr'].totalPages,
+        perPage: data.friends['@attr'].perPage,
+        friends: data.friends.user
+      })
+    } else {
+      res.send("no friends found");
+    }
+  } catch (err) {
+    console.error("Internal Error:", err.message);
+    res.status(500).send("Internal Server Error");
+  }
+});
        
 app.post('/username', async (req, res) =>{
   const {username} = req.body;

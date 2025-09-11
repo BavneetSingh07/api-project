@@ -7,20 +7,29 @@ body{
 
 #title{
   font-size: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #user-info-container{
-  width:40vw;
+  width: 100vw;
   height:80vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#middle-box{
+  width: 80%;
+  height: 90%;
   background-color:#0F3A57;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+
 }
 
-table{
+#dashboard-table{
   border-style: solid;
   height:90%;
   width:90%;
@@ -37,3 +46,60 @@ td{
 tr:hover{
   background-color: #125272;
 }
+
+#middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:80%;
+  flex: 1;
+}
+#left{
+  height:100%;
+  flex:1;
+  display: flex;
+  align-items: center;
+}
+#options-container{
+  width:60%;
+  height:70%;
+  background-color: #0F3A57;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+#right{
+  flex: 1;
+}
+#options-table{
+  border-color: #FFD700;
+  border-style: solid;
+  width:95%;
+  height:90%;
+  margin-left: -10px;
+  border-radius: 15px;
+}
+
+td{
+  border-radius: 15px;
+}
+
+#link{
+  display: flex;
+  width:100%;
+  height:100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#link:link{
+  color:white;
+  text-decoration: none;
+}
+#link:visited{
+  color:white;
+  text-decoration: none;
+}
+
