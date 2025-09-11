@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/background.css">
+  <link rel="stylesheet" href="/top_albums.css">
+  <title>My Top Albums</title>
+</head>
+<body>
+  <div id = "title">
+    My Top Albums
+  </div>
+  <div id = "table-box">
+    <table>
+      <tr>
+        <th class ="col1">Name</th>
+        <th>Artist</th>
+        <th>Playcount</th>
+      </tr>
+      <%album.forEach(album =>{ %>
+        <tr>
+          <td class = "col1">
+            <a href = '/album/<%=album.name%>/<%=album.artist.name%>'>
+              <%=album.name%>
+            </a>
+          </td>
+          <td>
+            <a href = '/artist/<%=album.artist.name%>'>
+              <%=album.artist.name%>
+            </a>
+          </td>
+          <td>
+            <%=album.playcount%>
+          </td>
+        </tr>
+      <%})%>
+    </table>
+  </div>
+</body>
+</html>

@@ -37,12 +37,13 @@ app.get('/:username/friends', async (req,res) => {
   try{
     const response = await fetch(`${URL}&method=user.getfriends&user=${username}&format=json&limit=20`);
     const data = await response.json();
-    console.log(data.friends.user);
+    console.log(data);
     if (data.friends){
       res.render('friends', {
         totalpages: data.friends['@attr'].totalPages,
         perPage: data.friends['@attr'].perPage,
-        friends: data.friends.user
+        friends: data.friends.user,
+        attributes: data.friends['@attr']
       })
     } else {
       res.send("no friends found");
@@ -52,7 +53,26 @@ app.get('/:username/friends', async (req,res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-       
+
+app.get('/:username/top_albums', async (req,res) => {
+  const username = req.params.username;
+  try{
+    const response = await fetch(`${URL}&method=user.gettopalbums&user=${username}&format=json&limit=5`);
+    const data = await response.json();
+    console.log(data.topalbums.album);
+    if (data.topalbums){
+      res.render('top_albums', {
+        album: data.topalbums.album
+      })
+    } else {
+      res.send("No Albums Found");
+    }
+  } catch (err){
+    console.error("Internal Error:", err.message);
+    res.status(500).send("Internal Server Error")
+  }
+})
+
 app.post('/username', async (req, res) =>{
   const {username} = req.body;
   if (username) {
@@ -65,10 +85,31 @@ app.post('/username', async (req, res) =>{
         res.send("User Not Found");
       }
     } catch (err){
-      console.error("Internal Error");
+      console.error("Internal Error:", err.message);
+      res.status(500).send("Internal Server Error");
     }
   } else {
     res.send ("Username Cannot Be Blank");
+  }
+});
+
+app.get('/album/:album/:artist', async (req,res) => {
+  const album = req.params.album;
+  const artist = req.params.artist;
+  try{
+    const response = await fetch(`${URL}&method=album.getinfo&album=${album}&artist=${artist}&format=json`);
+    const data = await response.json();
+    if (data.album) {
+      res.render('album',{
+        album: data.album
+      })
+    } else {
+      res.send("Album Not Found");
+    }
+    console.log(data.album.tracks);
+  } catch (err){
+    console.error("Internal Error:", err.message);
+    res.status(500).send("Internal Server Error");
   }
 });
 

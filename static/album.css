@@ -1,0 +1,36 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#title{
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+#table-box{
+  background-color: #0F3A57;
+  width:30vw;
+  height:80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+table{
+  border-style: solid;
+  border-color: #FFD700;
+  width:90%;
+  height: 90%;
+  text-align: center;
+  border-radius: 15px;
+}
+table tr:hover{
+  background-color: #125272;
+}
+
+table tr td{
+  border-radius: 15px;
+}

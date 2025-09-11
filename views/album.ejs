@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/background.css">
+  <link rel="stylesheet" href="/album.css">
+  <title><%=album.name%></title>
+</head>
+<body>
+  <div id = 'title'><%=album.name%></div>
+  <div id = 'table-box'>
+    <table>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          <%=album.name%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Artist
+        </td>
+        <td>
+          <%=album.artist%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Listeners
+        </td>
+        <td>
+          <%=album.listeners%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Playcount
+        </td>
+        <td>
+          <%=album.playcount%>
+        </td>
+      </tr>
+      <tr id = "listen-now">
+        <td colspan="2">Listen Now</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
