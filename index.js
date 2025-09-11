@@ -99,12 +99,25 @@ app.get('/album/:album/:artist', async (req,res) => {
   try{
     const response = await fetch(`${URL}&method=album.getinfo&album=${album}&artist=${artist}&format=json`);
     const data = await response.json();
-    console.log(data.album.tracks);
-    if (data.album) {
-      res.render('album',{
+    console.log(data.album);
+    if (data.album && data.album.tracks && data.album.tracks.track) {
+      if (Array.isArray(data.album.tracks.track)){
+        res.render('multi-track-album',{
         album: data.album,
-      })
-    } else {
+        tracklist: data.album.tracks.track
+        })
+      } else {
+        const track = [data.album.tracks.track];
+        res.render('single-track-album',{
+          album: data.album,
+          tracklist: track
+          })
+      }
+    } else if (data.album){
+      res.render('single-track-album', {
+        album: data.album
+      }
+    )} else {
       res.send("Album Not Found");
     }
     console.log(data.album);

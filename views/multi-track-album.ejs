@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/background.css">
+  <link rel="stylesheet" href="/multi-track-album.css">
+  <title><%=album.name%></title>
+</head>
+<body>
+  <div id = 'title'><%=album.name%></div>
+  <div id = 'complete-album-info'>
+    <div id = 'track-info-container'>
+      <table id = "track-table">
+        <tr>
+          <th>Track Name</th>
+          <th>Duration</th>
+        </tr>
+        <% tracklist.forEach(track => { %>
+          <tr>
+            <td><%=track.name%></td>
+            <% if (track.duration){ %>
+            <td><%=track.duration%></td>
+            <%} else {%>
+            <td>0</td>
+            <%}%>
+          </tr>
+        <%})%>
+      </table>
+    </div>
+    <div id = 'table-box'>
+      <table id="album-table">
+        <tr>
+          <td>
+            Name
+          </td>
+          <td>
+            <%=album.name%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+           Artist
+         </td>
+         <td>
+           <%=album.artist%>
+         </td>
+        </tr>
+        <tr>
+          <td>
+           Listeners
+          </td>
+         <td>
+           <%=album.listeners%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+           Playcount
+          </td>
+          <td>
+           <%=album.playcount%>
+         </td>
+        </tr>
+        <tr id = "listen-now">
+          <td colspan="2">Listen Now</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

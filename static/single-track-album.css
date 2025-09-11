@@ -1,0 +1,70 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#title{
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+#table-box{
+  background-color: #0F3A57;
+  width:40%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+#table-box table{
+  border-style: solid;
+  border-color: #FFD700;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  border-radius: 15px;
+}
+#table-box table tr:hover{
+  background-color: #125272;
+}
+
+#table-box table tr td{
+  border-radius: 10px;
+}
+
+#complete-album-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:80vw;
+  height:80vh;
+}
+
+#track-info-container{
+  width: 40%;
+  height:20%;
+  background-color: #0F3A57;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+}
+
+#track-table{
+  border-style: solid;
+  border-color: #FFD700;
+  height: 80%;
+  width: 90%;
+  text-align: center;
+  border-radius: 15px;;
+}
+#track-table tr:hover{
+  background-color: #125272;
+}
+#track-table tr td, #track-table tr th{
+  border-radius: 15px;
+}
