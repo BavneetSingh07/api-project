@@ -19,7 +19,7 @@ body{
   border-radius: 20px;
 }
 
-table{
+#table-box table{
   border-style: solid;
   border-color: #FFD700;
   width:90%;
@@ -27,10 +27,10 @@ table{
   text-align: center;
   border-radius: 15px;
 }
-table tr:hover{
+#table-box table tr:hover{
   background-color: #125272;
 }
 
-table tr td{
+#table-box table tr td{
   border-radius: 15px;
 }

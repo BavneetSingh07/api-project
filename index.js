@@ -99,14 +99,15 @@ app.get('/album/:album/:artist', async (req,res) => {
   try{
     const response = await fetch(`${URL}&method=album.getinfo&album=${album}&artist=${artist}&format=json`);
     const data = await response.json();
+    console.log(data.album.tracks);
     if (data.album) {
       res.render('album',{
-        album: data.album
+        album: data.album,
       })
     } else {
       res.send("Album Not Found");
     }
-    console.log(data.album.tracks);
+    console.log(data.album);
   } catch (err){
     console.error("Internal Error:", err.message);
     res.status(500).send("Internal Server Error");
