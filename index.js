@@ -46,7 +46,9 @@ app.get('/:username/friends', async (req,res) => {
         attributes: data.friends['@attr']
       })
     } else {
-      res.send("no friends found");
+      res.render('error',{
+        error: "No Friends Found"
+      })
     }
   } catch (err) {
     console.error("Internal Error:", err.message);
@@ -65,7 +67,9 @@ app.get('/:username/top_albums', async (req,res) => {
         album: data.topalbums.album
       })
     } else {
-      res.send("No Albums Found");
+      res.render('error',{
+        error: "No Albums Found"
+      })
     }
   } catch (err){
     console.error("Internal Error:", err.message);
@@ -82,14 +86,18 @@ app.post('/username', async (req, res) =>{
       if (data.user){
         res.redirect(`/dashboard/${username}`);
       } else {
-        res.send("User Not Found");
+        res.render('error',{
+          error: "User Not Found"
+        })
       }
     } catch (err){
       console.error("Internal Error:", err.message);
       res.status(500).send("Internal Server Error");
     }
   } else {
-    res.send ("Username Cannot Be Blank");
+    res.render('error',{
+      error: "Username Cannot Be Blank"
+    })
   }
 });
 
@@ -118,7 +126,9 @@ app.get('/album/:album/:artist', async (req,res) => {
         album: data.album
       }
     )} else {
-      res.send("Album Not Found");
+      res.render('error',{
+        error: "No Albums Found"
+      })
     }
     console.log(data.album);
   } catch (err){
