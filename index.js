@@ -142,6 +142,21 @@ app.get('/:username/top_tracks', async (req,res) => {
   }
 })
 
+app.get('/:username/top_artists', async (req, res) => {
+  const username = req.params.username;
+  try{
+    const response = await fetch(`${URL}&method=user.gettopartists&user=${username}&format=json&limit=5`);
+    const data = await response.json();
+    console.log(data.topartists.artist);
+    res.render('top_artists', {
+      artistList: data.topartists.artist
+    })
+  } catch (err){
+    console.error("Internal error: ", err.message);
+    res.status(500).send("Internal Server Error");
+  }
+})
+
 const PORT = 3000;
 app.listen (PORT, () =>{
   console.log(`Server is running on port http://localhost:${PORT}`);
