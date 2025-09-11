@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/background.css">
+  <link rel="stylesheet" href="/top_tracks.css">
+  <title>My Top Tracks</title>
+</head>
+<body>
+  <div id = "title">
+    My Top Tracks
+  </div>
+  <div id = "table-box">
+    <table>
+      <tr>
+        <th>Track Name</th>
+        <th>Artist</th>
+        <th>Playcount</th>
+      </tr>
+      <%tracklist.forEach(track =>{ %>
+        <tr>
+          <td>
+            <%=track.name%>
+          </td>
+          <td>
+            <%=track.artist.name%>
+          </td>
+          <td>
+            <%=track.playcount%>
+          </td>
+        </tr>
+      <%})%>
+    </table>
+  </div>
+</body>
+</html>
