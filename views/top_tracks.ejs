@@ -21,10 +21,14 @@
       <%tracklist.forEach(track =>{ %>
         <tr>
           <td>
-            <%=track.name%>
+            <a href = "/track/<%=track.name%>/<%=track.artist.name%>">
+              <%=track.name%>
+            </a>
           </td>
           <td>
-            <%=track.artist.name%>
+            <a href = '/artist/<%=track.artist.name%>'>
+              <%=track.artist.name%>
+            </a>
           </td>
           <td>
             <%=track.playcount%>

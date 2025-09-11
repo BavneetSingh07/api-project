@@ -20,7 +20,9 @@
       <%artistList.forEach(artist =>{ %>
         <tr>
           <td>
-            <%=artist.name%>
+            <a href = '/artist/<%=artist.name%>'>
+              <%=artist.name%>
+            </a>
           </td>
           <td>
             <%=artist.playcount%>

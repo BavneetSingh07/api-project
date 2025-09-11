@@ -19,7 +19,14 @@ body{
   align-items: center;
   border-radius: 20px;
 }
-
+table tr td a:visited{
+  text-decoration: none;
+  color: white;
+}
+table tr td a:link{
+  text-decoration: none;
+  color: white;
+}
 table{
   border-style: solid;
   border-color: #FFD700;

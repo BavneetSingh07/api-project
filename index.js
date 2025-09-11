@@ -157,6 +157,37 @@ app.get('/:username/top_artists', async (req, res) => {
   }
 })
 
+app.get('/artist/:artist', async (req,res) => {
+  const artist = req.params.artist;
+  try{
+    const response = await fetch(`${URL}&method=artist.getinfo&artist=${artist}&format=json`);
+    const data = await response.json();
+    console.log(data);
+    res.render('artist', {
+      artist: data.artist
+    })
+  } catch (err){
+    console.error("Internal Error: ", err.message);
+    req.status(500).send("Internal Server Error");
+  }
+})
+
+app.get('/track/:track/:artist', async (req,res) => {
+  const track = req.params.track;
+  const artist = req.params.artist;
+  try{
+    const response = await fetch(`${URL}&method=track.getinfo&track=${track}&artist=${artist}&format=json`);
+    const data = await response.json();
+    console.log(data);
+    res.render('track', {
+      track: data.track
+    })
+  } catch (err){
+    console.error("Internal Error: ", err.message);
+    res.status(500).send("Internal Server Error");
+  }
+})
+
 const PORT = 3000;
 app.listen (PORT, () =>{
   console.log(`Server is running on port http://localhost:${PORT}`);

@@ -36,3 +36,12 @@ table tr:hover{
 table tr th, table tr td{
   border-radius: 10px;
 }
+
+table tr td a:visited{
+  text-decoration: none;
+  color: white;
+}
+table tr td a:link{
+  text-decoration: none;
+  color: white;
+}

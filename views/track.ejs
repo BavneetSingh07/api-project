@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/background.css">
+  <link rel="stylesheet" href="/track.css">
+  <title><%=track.name%></title>
+</head>
+<body>
+  <div id = "title">
+    <%=track.name%>
+  </div>
+  <div id = "table-box">
+    <table>
+      <tr>
+        <td>Name</td>
+        <td><%=track.name%></td>
+      </tr>
+      <tr>
+        <td>Artist</td>
+        <td><%=track.artist.name%></td>
+      </tr>
+      <% if (track.album &&track.album.title){ %>
+        <tr>
+          <td>Album</td>
+          <td><%=track.album.title%></td>
+        </tr>
+      <% } %>
+      <tr>
+        <td>Duration</td>
+        <td><%=track.duration%></td>
+      </tr>
+      <tr>
+        <td>Listeners</td>
+        <td><%=track.listeners%></td>
+      </tr>
+      <tr>
+        <td>Playcount</td>
+        <td><%=track.playcount%></td>
+      </tr>
+      
+    </table>
+  </div>
+</body>
+</html>

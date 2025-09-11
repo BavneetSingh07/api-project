@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/background.css">
+  <link rel="stylesheet" href="/artist.css">
+  <title><%=artist.name%></title>
+</head>
+<body>
+  <div id = "title">
+    <%=artist.name%>
+  </div>
+  <div id = "table-box">
+    <table>
+      <tr>
+        <td>Artist</td>
+        <td><%=artist.name%></td>
+      </tr>
+      <tr>
+        <td>Listeners</td>
+        <td><%=artist.stats.listeners%></td>
+      </tr>
+      <tr>
+        <td>Playcount</td>
+        <td><%=artist.stats.playcount%></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
