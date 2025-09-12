@@ -198,6 +198,12 @@ app.get('/track/:track/:artist', async (req,res) => {
   }
 })
 
+app.use((err,req,res,next) => {
+  res.render('error', {
+    error:"API Request Error"
+  })
+})
+
 const PORT = 3000;
 app.listen (PORT, () =>{
   console.log(`Server is running on port http://localhost:${PORT}`);
