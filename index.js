@@ -197,10 +197,15 @@ app.get('/track/:track/:artist', async (req,res) => {
     res.status(500).send("Internal Server Error");
   }
 })
+app.use((req,res,next) => {
+  res.status(404).render('error', {
+    error:"Page Not Found"
+  })
+})
 
 app.use((err,req,res,next) => {
-  res.render('error', {
-    error:"API Request Error"
+  res.status(500).render('error', {
+    error:"Internal Server"
   })
 })
 
