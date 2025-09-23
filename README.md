@@ -1,6 +1,6 @@
 # Last FM Music Stats API
 
-Description of the project
+I designed this web application so curious music listeners like myself can discover their most played songs and how often they listen to them. Users can access their personalised list of favourite albums, tracks and artists and access detailed information on each selection. This dynamic application uses HTML/CSS for the frontend, Node.js/Express alongside EJS to manage the middleware and the Last fm API as the backend to retrieve data.
 
 ## Features
 
@@ -42,7 +42,7 @@ node index.js
 Users start by entering a Last.fm username in the username form and submitting
 
 2. Dashboard
-Users can view user's profile and stats retreived from Last.fm
+Users can view user's profile and stats retrieved from Last.fm
 
 3. Friends
 Users can view the user's friends list from Last.fm
@@ -85,8 +85,10 @@ Users can view details for a selected artist
 ### Album Information/Song Information/Artist Information
 ![Album Info](Screenshots/Albuminfo_screenshot.png)
 ![Song Info and Artist Info](Screenshots/SongInfoAndArtistInfo.png)
-###
-###
+
 ## Future Improvements
 - Charts to Represent Data
-- 
+- Add Navigation Bar for UX
+- Add a Previous Page Button For UX
+- Add Pagination
+- Add Limits
