@@ -79,7 +79,7 @@ Users can view details for a selected artist
 ![Homepage](Screenshots/Homepage_screenshot.png)
 ![Dashboard](Screenshots/Dashboard_screenshot.png)
 ![Friends](Screenshots/Friendlist_screenshot.png)
-### Top Albums/Top Artists/Top Tracks
+### Top Albums/Top Tracks/Top Artists
 ![Top Albums and Top Artists](Screenshots/TopAlbumsAndTopArtists.png)
 ![Top Tracks](Screenshots/Toptracks_screenshot.png)
 ### Album Information/Song Information/Artist Information
