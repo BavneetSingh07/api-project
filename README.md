@@ -22,7 +22,10 @@ I designed this web application so curious music listeners like myself can disco
 ## Setup
 ### Code Setup
 1. git clone https://github.com/BavneetSingh07/database-project.git
-2. npm install
+2. 
+```bash
+npm install
+```
 3. create .env file (containing API_KEY)
 
 ### API Setup
