@@ -1,4 +1,5 @@
 # Last FM Music Stats API
+**Deployment Link:** 
 
 I designed this web application so curious music listeners like myself can discover their most played songs and how often they listen to them. Users can access their personalised list of favourite albums, tracks and artists and access detailed information on each selection. This dynamic application uses HTML/CSS for the frontend, Node.js/Express alongside EJS to manage the middleware and the Last fm API as the backend to retrieve data.
 
@@ -19,7 +20,7 @@ I designed this web application so curious music listeners like myself can disco
 
 - API_KEY (Generated from Last Fm Website)
 
-## Setup
+## Local Deployment Setup
 ### Code Setup
 1. git clone https://github.com/BavneetSingh07/database-project.git
 2. **Run the following command in terminal**
