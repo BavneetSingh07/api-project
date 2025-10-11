@@ -22,7 +22,7 @@ I designed this web application so curious music listeners like myself can disco
 ## Setup
 ### Code Setup
 1. git clone https://github.com/BavneetSingh07/database-project.git
-2. 
+2. **Run the following command in terminal**
 ```bash
 npm install
 ```
@@ -93,5 +93,4 @@ Users can view details for a selected artist
 - Charts to Represent Data
 - Add Navigation Bar for UX
 - Add a Previous Page Button For UX
-- Add Pagination
-- Add Limits
+- Add Pagination/Limits
