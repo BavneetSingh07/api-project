@@ -2,12 +2,9 @@ let ejs = require('ejs');
 let express = require('express')
 require('dotenv').config()
 
-
-
 const app = express();
 const API_KEY = process.env.API_KEY;
 const URL = `http://ws.audioscrobbler.com/2.0/?api_key=${API_KEY}`;
-
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/static'));
@@ -212,7 +209,7 @@ app.use((err,req,res,next) => {
   })
 })
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.listen (PORT, () =>{
   console.log(`Server is running on port http://localhost:${PORT}`);
 });

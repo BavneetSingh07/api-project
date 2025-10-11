@@ -18,7 +18,8 @@ I designed this web application so curious music listeners like myself can disco
 
 ## Environmental Variables 
 
-- API_KEY (Generated from Last Fm Website)
+- API_KEY (Generated from Last FM Website)
+- PORT (Local Server Port Number)
 
 ## Local Deployment Setup
 ### Code Setup
