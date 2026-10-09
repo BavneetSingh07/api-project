@@ -30,7 +30,7 @@ npm install
 ```
 2. Create an env file in the project's root directory and add your API key
 ```env
-
+API_KEY=insert_the_key_here
 ```
 
 ### API Setup
