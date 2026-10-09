@@ -22,7 +22,7 @@ I designed this web application so curious music listeners like myself can disco
 
 ## Local Deployment Setup
 ### Code Setup
-1. git clone https://github.com/BavneetSingh07/database-project.git
+1. git clone https://github.com/BavneetSingh07/api-project.git
 2. **Run the following command in terminal**
 ```bash
 npm install
