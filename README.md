@@ -22,12 +22,12 @@ I designed this web application so curious music listeners like myself can disco
 
 ## Local Deployment Setup
 ### Code Setup
-1. git clone https://github.com/BavneetSingh07/api-project.git
-2. **Run the following command in terminal**
 ```bash
+git clone https://github.com/BavneetSingh07/api-project.git
+cd api-project
 npm install
 ```
-3. create .env file (containing API_KEY)
+4. create .env file (containing API_KEY)
 
 ### API Setup
 1. Visit https://www.last.fm/api/account/create?_pjax=%23content
