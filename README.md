@@ -28,7 +28,7 @@ git clone https://github.com/BavneetSingh07/api-project.git
 cd api-project
 npm install
 ```
-2. Create an env file in the project's root directory and add your API key
+2. Create an .env file in the project's root directory and add your LastFM API key
 ```env
 API_KEY=insert_the_key_here
 ```
